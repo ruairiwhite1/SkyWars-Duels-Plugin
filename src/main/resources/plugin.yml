@@ -1,0 +1,13 @@
+name: SkyWarsDuels
+version: '1.0'
+main: me.ruairiw8.skywarsduels.SkyWarsDuels
+api-version: 1.16
+authors: [ Ruairiw8 ]
+description: A simple skywars duel plugin
+website: play.wondernetwork.net
+commands:
+  start:
+    description: Start the game
+  reset:
+    description: Reset the game
+    permission: OP
