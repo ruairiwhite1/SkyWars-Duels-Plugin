@@ -11,7 +11,6 @@ import java.io.IOException;
 public class LocalGameMap implements GameMap {
 
     private final File sourceWorldFolder;
-
     private File activeWorldFolder;
 
     private World bukkitWorld;
@@ -25,12 +24,11 @@ public class LocalGameMap implements GameMap {
         if (loadOnInit) load();
     }
 
-    @Override
     public boolean load() {
         if (isLoaded()) return true;
 
         this.activeWorldFolder = new File(
-                Bukkit.getWorldContainer().getParentFile(),
+                Bukkit.getWorldContainer().getParentFile(), // Root server folder
                 sourceWorldFolder.getName() + "_active_" + System.currentTimeMillis()
         );
 
@@ -50,7 +48,6 @@ public class LocalGameMap implements GameMap {
         return isLoaded();
     }
 
-    @Override
     public void unload() {
         if (bukkitWorld != null ) Bukkit.unloadWorld(bukkitWorld, false);
         if (activeWorldFolder != null ) FileUtil.delete(activeWorldFolder);
@@ -59,18 +56,15 @@ public class LocalGameMap implements GameMap {
         activeWorldFolder = null;
     }
 
-    @Override
     public boolean restoreFromSource() {
         unload();
         return load();
     }
 
-    @Override
     public boolean isLoaded() {
         return false;
     }
 
-    @Override
     public World getWorld() {
         return null;
     }

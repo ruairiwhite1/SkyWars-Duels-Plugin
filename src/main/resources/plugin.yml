@@ -11,3 +11,9 @@ commands:
   reset:
     description: Reset the game
     permission: OP
+  load:
+    description: Load the map for the first time
+    permission: OP
+  resetchests:
+    description: reset all chests
+    permission: OP

@@ -48,10 +48,6 @@ public class GameManager {
         }
     }
 
-    public void cleanup() {
-        localGameMap.restoreFromSource();
-    }
-
     public BlockManager getBlockManager() {return blockManager;}
 
     public PlayerManager getPlayerManager() {return playerManager;}
